@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <h1>Meow Moments: Discover Fun Cat Facts</h1>
+  <div class="cat-fact">
+    <div *ngIf="loading" class="loader"></div>
+    <div *ngIf="!loading">
+      <img [src]="catImageUrl" alt="Random Cat" *ngIf="catImageUrl" class="cat-image"/>
+      <p>{{ catFact }}</p>
+    </div>
+    <button (click)="fetchCatFactAndImage()" title="Click for More Meow-velous Facts!">Get a New Cat-tastic Fact!</button>
+  </div>
+</div>

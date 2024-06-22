@@ -1,0 +1,16 @@
+<h1>Discover Denmark's Top Universities</h1>
+<div class="university-container" *ngIf="universities.length > 0">
+  <h2>{{ universities[currentIndex].name }}</h2>
+  <p>Country: {{ universities[currentIndex].country }}</p>
+  <p>State: {{ universities[currentIndex].state ? universities[currentIndex].state : '-NA-' }}</p>
+  <p>Alpha Code: {{ universities[currentIndex].alpha_code }}</p>
+  <p>Website: <a [href]="universities[currentIndex].website" target="_blank">{{ universities[currentIndex].website }}</a></p>
+
+  <div class="button-group">
+    <button (click)="previousUniversity()" [disabled]="currentIndex === 0">Previous</button>
+    <button (click)="nextUniversity()" [disabled]="currentIndex === universities.length - 1">Next</button>
+  </div>
+</div>
+<div class="loading" *ngIf="universities.length === 0">
+  <p>Loading universities...</p>
+</div>
