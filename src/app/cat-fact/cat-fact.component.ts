@@ -17,14 +17,14 @@ export class CatFactComponent implements OnInit {
   constructor(private catFactService: CatFactService) {}
 
   ngOnInit(): void {
-    this.fetchCatFactAndImage(); // Initial fetch of cat fact and image
+    this.fetchCatFactAndImage();
   }
 
   fetchCatFactAndImage() {
     this.loading = true;
     this.catFactService.getCatFactAndImage().subscribe(response => {
       this.catFact = response[0].fact;
-      this.catImageUrl = response[1][0].url; // Fetch the first image URL from the array
+      this.catImageUrl = response[1][0].url;
       this.loading = false;
     });
   }
